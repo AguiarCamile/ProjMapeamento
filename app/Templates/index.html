@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Mapeamento de cultura perene</title>
+    <title>Mapeamento de Cultura Perene</title>
     <!-- link bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link>
@@ -10,11 +10,11 @@
 <body>
 
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Projeto de mapeamento das culturas perenes</h1>
+        <h1>Projeto de Mapeamento das Culturas Perenes</h1>
     </div>
 
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
-        <a href="/form" class="btn btn-success">Adicionar Estado</a>
+        <a href="/form" class="btn btn-success">Adicionar Cultura</a>
     </div>
 
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
@@ -29,7 +29,7 @@
             <thead class="thead-dark">
                   <tr class="table-dark">
                     <th scope="col">#</th>
-                    <th scope="col">Estado</th>
+                    <th scope="col">Cultura</th>
                     <th scope="col">Ações</th>
                   </tr>
             </thead>
@@ -39,7 +39,7 @@
             <!--Primeira linha-->
                   <tr>
                     <th scope="row">{{dbs.id}}</th>
-                    <td>{{dbs.Estado}}</td>
+                    <td>{{dbs.Cultura}}</td>
                     <td>
                        <a href="/view/{{dbs.id}}/" class="btn btn-dark"> Visualizar </a>
                        <a href="/edit/{{dbs.id}}/" class="btn btn-primary"> Editar </a>
