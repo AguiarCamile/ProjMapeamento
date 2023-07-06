@@ -1,8 +1,14 @@
 from django.forms import ModelForm
-from app.models import Estados
+from app.models import Culturas, Proprietarios
 
 # Create the form class.
-class EstadosForm(ModelForm):
-     class Meta:
-        model = Estados
-        fields = ["Estado"]
+class CulturasForm(ModelForm):
+    class Meta:
+        model = Culturas
+        fields = ["Cultura"]
+
+
+class ProprietariosForm(ModelForm):
+    class Meta:
+        model = Proprietarios
+        fields = ['nomeProprietarios', 'cpf', 'contato']
