@@ -11,11 +11,6 @@
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
             <h1>Cadastrar Propriedades</h1>
         </div>
-
-        <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <a href="/" class="btn btn-success">Voltar</a>
-        </div>
-
         <div class = "col-8 m-auto pt-4 pb-2 text-center">
             <form name = "form3" id="form3" action="{% if db %}/update3/{{db.id}}/{% else %}/create3/{% endif %}" method="post">
                 {% csrf_token %}
@@ -33,6 +28,9 @@
                 <div class="form-group mt-4">Tamanho da area: {{form.tamanho_area}}</div>
                 <div class="form-group mt-4">
                     <input type="submit" class="btn btn-success" value="Salvar">
+                </div>
+                <div class = "col-8 m-auto pt-2 pb-2 text-center">
+                <a href="/" class="btn btn-success">Voltar</a>
                 </div>
             </form>
         </div>

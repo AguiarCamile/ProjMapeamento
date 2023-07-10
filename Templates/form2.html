@@ -9,13 +9,8 @@
 <body>
 
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Cadastro</h1>
+            <h1>Cadastrar Proprietarios</h1>
     </div>
-
-    <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <a href="/" class="btn btn-success">Voltar</a>
-    </div>
-
     <div class = "col-8 m-auto pt-4 pb-2 text-center">
         <form name = "form2" id="form2" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}" method="post">
             {% csrf_token %}
@@ -24,6 +19,9 @@
             <div class="form-group mt-4">Contato: {{form.contato}}</div>
             <div class="form-group mt-4">
                 <input type="submit" class="btn btn-success" value="Salvar">
+            </div>
+            <div class = "col-8 m-auto pt-2 pb-2 text-center">
+            <a href="/" class="btn btn-success">Voltar</a>
             </div>
         </form>
     </div>
