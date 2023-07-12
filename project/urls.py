@@ -16,33 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from app.views import home, login, form, create, view, edit, update, delete
-from app.views import home2, form2, create2, view2, edit2, update2, delete2
-from app.views import home3, form3, create3, view3, edit3, update3, delete3
+from app.views import home, index, login, create_cultura, create_proprietario, create_propriedade
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('project/', include('app.urls')),
-    path('', home, name='home'),
-    path('login/', login, name='login'),
-    path('form/', form, name='form'),
-    path('create/', create, name='create'),
-    path('view/<int:pk>/', view, name='view'),
-    path('edit/<int:pk>/', edit, name='edit'),
-    path('update/<int:pk>/', update, name='update'),
-    path('delete/<int:pk>/', delete, name='delete'),
-    path('', home2, name='home'),
-    path('form2/', form2, name='form2'),
-    path('create2/', create2, name='create2'),
-    path('view2/<int:pk>/', view2, name='view2'),
-    path('edit2/<int:pk>/', edit2, name='edit2'),
-    path('update2/<int:pk>/', update2, name='update2'),
-    path('delete2/<int:pk>/', delete2, name='delete2'),
-    path('', home3, name='home'),
-    path('form3/', form3, name='form3'),
-    path('create3/', create3, name='create3'),
-    path('view3/<int:pk>/', view3, name='view3'),
-    path('edit3/<int:pk>/', edit3, name='edit3'),
-    path('update3/<int:pk>/', update3, name='update3'),
-    path('delete3/<int:pk>/', delete3, name='delete3'),
+    path('home/', home, name='home'),
+    path('index', index, name='index'),
+    path('login', login, name='login'),
+    #path('base', base, name='base'),
+    #path('base', menu, name='menu'),
+    path('create_cultura', create_cultura, name='create_cultura'),
+    path('create_proprietario', create_proprietario, name='create_proprietario'),
+    path('create_propriedade', create_propriedade, name='create_propriedade'),
+
+
+
+
 ]
