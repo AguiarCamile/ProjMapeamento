@@ -27,7 +27,7 @@ body {
     margin-bottom: 25px;
 }
 
-label.h2{
+div.h2{
     font-weight: 600;
     margin-padding: 5%;
     position: relative;
@@ -46,9 +46,7 @@ label.h2{
     position: relative;
     top: -10px;
     left: 0px;
-
 }
-
 .btn-salv{
     background-color: darkgreen;
     border-color:rgba(198, 247, 100, 0.808);
