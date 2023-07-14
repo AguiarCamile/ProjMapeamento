@@ -1,0 +1,20 @@
+{% extends 'menu.html' %}
+{% load static %}
+{% block title%}Vizualização de dados{% endblock %}
+{% block body%}
+
+    <div class = "col-8 m-auto pt-2 pb-2 text-center">
+            <h1>Visualização dos dados da Cultura</h1>
+    </div>
+    <div class = "col-8 m-auto pt-4 pb-2 text-center">
+        <strong>
+            Cultura:
+        </strong> {{db.Cultura}} <br>
+    </div>
+    <div class = "col-8 m-auto pt-2 pb-2 text-center">
+            <a href="/" class="btn btn-success">Voltar</a>
+    </div>
+
+{% endblock %}
+
+

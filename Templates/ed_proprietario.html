@@ -1,0 +1,50 @@
+{% extends 'menu.html' %}
+{% load static %}
+{% block title%}Edição e exlusão de dados{% endblock %}
+{% block body%}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!--<div class = "col-8 m-auto pt-2 pb-2 text-center">
+        <a href="/form2" class="btn btn-success">Adicionar Proprietario</a>
+    </div>-->
+
+    <div class = "col-8 m-auto pt-2 pb-2 text-center">
+        <form method = "get">
+            <input type="text" id="search2" name="search" class="form-control" placeholder="Buscar">
+        </form>
+    </div>
+
+    <div class = "col-8 m-auto pt-2 pb-2 text-center">
+    <table class="table">
+            <!--Cabeçalho da tabela -->
+            <thead class="thead-dark">
+                  <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Contato</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+            </thead>
+            <tbody>
+                {%for dbs in db%}
+            <!--Inicio do corpo da tabela-->
+            <!--Primeira linha-->
+                  <tr>
+                    <th scope="row">{{dbs.id}}</th>
+                    <td>{{dbs.nomeProprietarios}}</td>
+                    <td>{{dbs.cpf}}</td>
+                    <td>{{dbs.contato}}</td>
+                    <td>
+                       <a href="/view2/{{dbs.id}}/" class="btn btn-dark"> Visualizar </a>
+                       <a href="/edit2/{{dbs.id}}/" class="btn btn-primary"> Editar </a>
+                       <a href="/delete2/{{dbs.id}}/" class="btn btn-danger"> Deletar </a>
+                    </td>
+                  </tr>
+                {%endfor%}
+          </tbody>
+        </table>
+    </div>
+
+{% endblock %}

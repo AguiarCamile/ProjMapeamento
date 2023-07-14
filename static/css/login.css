@@ -1,0 +1,31 @@
+body {
+    font-family: times new roman, arial, sans-serif;
+
+}
+.Login {
+    background-color: rgba(0, 0, 0, 0.88);
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    transform: translate(-50%, - 50%);
+    padding: 60px;
+    border-radius: 15px;
+    color: white;
+}
+
+.login-e-senha {
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.button-login {
+    background-color: limegreen;
+    border: none;
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}

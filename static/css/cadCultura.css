@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(80deg, greenyellow, darkgreen);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lab-cultura{
+    background: white;
+    max-width: 350px;
+    min-height: 40vh;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+label.h2{
+    font-weight: 600;
+    margin-bottom: 2rem;
+    margin-padding: 5%;
+    position: relative;
+}
+
+.button-volt{
+    background-color: darkgreen;
+    border-color:rgba(198, 247, 100, 0.808);
+    color: white;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 25%;
+    margin-left: 0px;
+    padding: 0%;
+    font-size: large;
+    align-items: center;
+    border-radius: 8px;
+    position: relative;
+    left: 0px;
+
+}
+
+.btn-salv{
+    background-color: darkgreen;
+    border-color:rgba(198, 247, 100, 0.808);
+    color: white;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 25%;
+    margin-left: 0px;
+    font-size: large;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.campo{
+    width: 75%;
+    border-width: 1px;
+    height: 30px;
+    margin-left: 2%;
+    border: solid;
+    border-color: hsla(80, 4%, 70%, 0.808);
+    border-radius: 8px;
+}

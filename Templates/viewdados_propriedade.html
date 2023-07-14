@@ -1,0 +1,19 @@
+{% extends 'menu.html' %}
+{% load static %}
+{% block title%}Vizualização de dados{% endblock %}
+{% block body%}
+
+    <div class = "col-8 m-auto pt-2 pb-2 text-center">
+            <h1>Visualização dos dados da propriedade</h1>
+    </div>
+    <div class = "col-8 m-auto pt-4 pb-2 text-center">
+        <strong> APP:</strong> {{db.app}} <br>
+        <strong> Reserva Legal:</strong> {{db.rl}} <br>
+        <strong> Coordenada da Reserva:</strong> {{db.rl_coord}} <br>
+        <strong> Tamanho da area:</strong> {{db.tamanho_area}} <br>
+    </div>
+     <div class = "col-8 m-auto pt-2 pb-2 text-center">
+            <a href="/" class="btn btn-success">Voltar</a>
+    </div>
+
+{% endblock %}
