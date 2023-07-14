@@ -1,20 +1,29 @@
-{% extends 'menu.html' %}
 {% load static %}
-{% block title%}Vizualização de dados{% endblock %}
-{% block body%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Vizualização de dados</title>
+    <link rel="stylesheet" href="{% static 'css/viewdadoCultura.css' %}">
+</head>
+<body>
+    <label class="view-cultura">
 
-    <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Visualização dos dados da Cultura</h1>
-    </div>
-    <div class = "col-8 m-auto pt-4 pb-2 text-center">
-        <strong>
-            Cultura:
-        </strong> {{db.Cultura}} <br>
-    </div>
-    <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <a href="/" class="btn btn-success">Voltar</a>
-    </div>
-
-{% endblock %}
-
+        <div class = "col-8 m-auto pt-2 pb-2 text-center">
+            <h3>Visualização dos dados da Cultura</h3>
+        </div>
+        <br>
+        <div class = "col-8 m-auto pt-4 pb-2 text-center">
+            <strong>
+                Cultura:
+            </strong> {{db.Cultura}} <br>
+        </div>
+        <br> <br>
+        <div class = "col-8 m-auto pt-2 pb-2 text-center">
+            <button class="btn-volt">Voltar</button>
+            <!--<a href="/" class="btn-volt">Voltar</a>-->
+        </div>
+    </label>
+</body>
+</html>
 

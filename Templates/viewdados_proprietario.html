@@ -1,17 +1,27 @@
-{% extends 'menu.html' %}
 {% load static %}
-{% block title%}Vizualização de dados{% endblock %}
-{% block body%}
-
-    <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Visualização dos dados do Proprietario</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapeamento de cultura perene</title>
+    <link rel="stylesheet" href="{% static 'css/viewdadoProprietario.css' %}">
+</head>
+<body>
+<label class="view-proprietario">
+  <div class = "col-8 m-auto pt-2 pb-2 text-center">
+            <h3>Visualização dos dados do Proprietário</h3>
     </div>
+    <br>
     <div class = "col-8 m-auto pt-4 pb-2 text-center">
         <strong> Nome:</strong> {{db.nomeProprietarios}} <br>
         <strong> CPF:</strong> {{db.cpf}} <br>
         <strong> Contato:</strong> {{db.contato}} <br>
     </div>
+    <br> <br>
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <a href="/" class="btn btn-success">Voltar</a>
+        <button class="btn-volt">Voltar</button>
+            <!--<a href="/" class="btn btn-success">Voltar</a>-->
     </div>
-{% endblock %}
+    </label>
+</body>
+</html>

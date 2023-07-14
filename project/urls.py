@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 #from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from app.views import home, index, login, create_cultura, create_proprietario, create_propriedade
+from app.views import viewdados_cultura, viewdados_proprietario, viewdados_propriedade
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +31,9 @@ urlpatterns = [
     path('create_cultura/', create_cultura, name='create_cultura'),
     path('create_proprietario/', create_proprietario, name='create_proprietario'),
     path('create_propriedade/', create_propriedade, name='create_propriedade'),
+    path('viewdados_cultura/', viewdados_cultura, name='viewdados_cultura'),
+    path('viewdados_proprietario/', viewdados_proprietario, name='viewdados_proprietario'),
+    path('viewdados_propriedade/', viewdados_propriedade, name='viewdados_propriedade'),
 
 ]
 

@@ -1,29 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Formulário de Cadastro</title>
     <!-- link bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="{% static 'css/cadProprietario.css' %}">
 </head>
 <body>
-
-    <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Cadastrar Proprietarios</h1>
-    </div>
-    <div class = "col-8 m-auto pt-4 pb-2 text-center">
-        <form name = "form2" id="form2" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}" method="post">
-            {% csrf_token %}
-            <div class="form-group mt-4">Nome: {{form.nomeProprietarios}}</div>
-            <div class="form-group mt-4">CPF: {{form.cpf}}</div>
-            <div class="form-group mt-4">Contato: {{form.contato}}</div>
-            <div class="form-group mt-4">
-                <input type="submit" class="btn btn-success" value="Salvar">
-            </div>
-            <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <a href="/" class="btn btn-success">Voltar</a>
-            </div>
-        </form>
-    </div>
+    <label class="lab-proprietario">
+        <div class = "col-8 m-auto pt-2 pb-2 text-center">
+            <h2>Cadastrar Proprietários</h2>
+        </div>
+        <br>
+        <div class = "col-8 m-auto pt-4 pb-2 text-center">
+            <form name = "form2" id="form2" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}" method="post">
+                {% csrf_token %}
+                <div class="form-group mt-4">Nome: <!--{{form.nomeProprietarios}}-->
+                <input class="campo1" type="text" placeholder="insira aqui" aria-label="Nome">
+                </div>
+                <div class="form-group mt-4">CPF: <!--{{form.cpf}}-->
+                <input class="campo2" type="text" placeholder="insira aqui" aria-label="Nome">
+                </div>
+                <div class="form-group mt-4">Contato: <!--{{form.contato}}-->
+                <input class="campo3" type="text" placeholder="insira aqui" aria-label="Nome">
+                </div>
+                <div class="form-group mt-4">
+                    <input type="submit" class="btn-salv" value="Salvar">
+                </div>
+                <div class = "col-8 m-auto pt-2 pb-2 text-center">
+                    <button class="btn-volt">Voltar</button>
+                <!--<a href="/" class="btn-volt">Voltar</a>-->
+                </div>
+            </form>
+        </div>
+    </label>
 </body>
 </html>

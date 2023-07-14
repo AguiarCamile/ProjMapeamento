@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,32 +6,50 @@
     <title>Formulário de Cadastro</title>
     <!-- link bootstrap -->
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="{% static 'css/cadPropriedade.css' %}">
 </head>
 <body>
-    <label class="lab-proprietarios">
+    <label class="lab-propriedade">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Cadastrar Propriedades</h1>
+            <h2>Cadastrar Propriedades</h2>
         </div>
-        <div class = "col-8 m-auto pt-4 pb-2 text-center">
-            <form name = "form3" id="form3" action="{% if db %}/update3/{{db.id}}/{% else %}/create3/{% endif %}" method="post">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label form="{{ form.Culturas_id.id_for_label }}">Culturas:</label>
-                    {{ form.Culturas_id }}
+        <br>
+        <div class="form-group">
+        <label for="{{ form.Culturas_id.id_for_label }}">Culturas:</label>
+        <select name="{{ form.Culturas_id.name }}" id="{{ form.Culturas_id.id_for_label }}" class="campo1">
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+            <option value="opcao3">Opção 3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+        <label for="{{ form.Proprietarios_id.id_for_label }}">Proprietários:</label>
+        <select name="{{ form.Proprietarios_id.name }}" id="{{ form.Proprietarios_id.id_for_label }}" class="campo2">
+            <option value="proprietario1">Proprietário 1</option>
+            <option value="proprietario2">Proprietário 2</option>
+            <option value="proprietario3">Proprietário 3</option>
+        </select>
+        </div>
+
+                <div class="form-group mt-4">Área de Preservação Permanente: {{form.app}}
+                <input class="campo3" type="text" placeholder="insira aqui" aria-label="Nome">
                 </div>
-                <div class="form-group">
-                    <label form="{{ form.Proprietarios_id.id_for_label }}">Proprietarios:</label>
-                    {{ form.Proprietarios_id }}
+                <div class="form-group mt-4">Reserva Legal: {{form.rl}}
+                <input class="campo4" type="text" placeholder="insira aqui" aria-label="Nome">
                 </div>
-                <div class="form-group mt-4">APP: {{form.app}}</div>
-                <div class="form-group mt-4">Reserva Legal: {{form.rl}}</div>
-                <div class="form-group mt-4">Coordenada da Reserva: {{form.rl_coord}}</div>
-                <div class="form-group mt-4">Tamanho da area: {{form.tamanho_area}}</div>
+                <div class="form-group mt-4">Coordenada da Reserva: {{form.rl_coord}}
+                <input class="campo5" type="text" placeholder="insira aqui" aria-label="Nome">
+                </div>
+                <div class="form-group mt-4">Tamanho da area: {{form.tamanho_area}}
+                <input class="campo6" type="text" placeholder="insira aqui" aria-label="Nome">
+                </div>
                 <div class="form-group mt-4">
-                    <input type="submit" class="btn btn-success" value="Salvar">
+                    <input type="submit" class="btn-salv" value="Salvar">
                 </div>
                 <div class = "col-8 m-auto pt-2 pb-2 text-center">
-                <a href="/" class="btn btn-success">Voltar</a>
+                    <button class="btn-volt">Voltar</button>
+                <!--<a href="/" class="btn btn-success">Voltar</a>-->
                 </div>
             </form>
         </div>

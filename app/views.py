@@ -24,6 +24,11 @@ def create_propriedade(request):
 def create_proprietario(request):
     return render(request, 'create_proprietario.html')
 
+def viewdados_cultura(request):
+    return render(request, 'viewdados_cultura.html')
 
+def viewdados_proprietario(request):
+    return render(request, 'viewdados_proprietario.html')
 
-
+def viewdados_propriedade(request):
+    return render(request, 'viewdados_propriedade.html')
