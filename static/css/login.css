@@ -18,6 +18,7 @@ body {
     border: none;
     outline: none;
     font-size: 14px;
+    margin-bottom: 25px;
 }
 
 .button-login {

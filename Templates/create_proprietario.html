@@ -9,22 +9,21 @@
     <link rel="stylesheet" href="{% static 'css/cadProprietario.css' %}">
 </head>
 <body>
-    <label class="lab-proprietario">
+    <div class="div-proprietario">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
             <h2>Cadastrar Proprietários</h2>
         </div>
-        <br>
         <div class = "col-8 m-auto pt-4 pb-2 text-center">
             <form name = "form2" id="form2" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}" method="post">
                 {% csrf_token %}
                 <div class="form-group mt-4">Nome: <!--{{form.nomeProprietarios}}-->
-                <input class="campo1" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">CPF: <!--{{form.cpf}}-->
-                <input class="campo2" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">Contato: <!--{{form.contato}}-->
-                <input class="campo3" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">
                     <input type="submit" class="btn-salv" value="Salvar">
@@ -35,6 +34,6 @@
                 </div>
             </form>
         </div>
-    </label>
+    </div>
 </body>
 </html>

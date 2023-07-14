@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="{% static 'css/cadCultura.css' %}">
 </head>
 <body>
-    <label class="lab-cultura">
+    <div class="div-cultura">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
             <h2>Cadastrar Cultura</h2>
         </div>
-        <br> <br>
         <div class = "col-8 m-auto pt-4 pb-2 text-center">
             <form name = "form" id="form" action="{% if db %}/update/{{db.id}}/{% else %}/create/{% endif %}" method="post">
                 {% csrf_token %}
-                <div>Nome: <!--{{form.Cultura}}-->
+                <div>
+                    Nome: <!--{{form.Cultura}}-->
                     <input class="campo" type="text" placeholder="Cultura" aria-label="Nome">
                 </div>
 
@@ -30,6 +30,6 @@
                 <a href="/" class="button-voltar">Voltar</a>
             </div>-->
         </div>
-    </label>
+    </div>
 </body>
 </html>

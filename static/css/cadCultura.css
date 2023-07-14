@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    margin-bottom: 15px;
 }
 
 body {
@@ -16,18 +17,18 @@ body {
     justify-content: center;
 }
 
-.lab-cultura{
+.div-cultura{
     background: white;
     max-width: 400px;
     min-height: 40vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    margin-bottom: 25px;
 }
 
 label.h2{
     font-weight: 600;
-    margin-bottom: 2rem;
     margin-padding: 5%;
     position: relative;
 }
@@ -38,8 +39,6 @@ label.h2{
     color: white;
     width: 100%;
     height: 40px;
-    margin-bottom: 1%;
-    margin-left: 0px;
     padding: 0%;
     font-size: large;
     align-items: center;
@@ -56,8 +55,6 @@ label.h2{
     color: white;
     width: 100%;
     height: 40px;
-    margin-top: 19px;
-    margin-bottom: 10%;
     margin-left: 0px;
     font-size: large;
     align-items: center;
@@ -67,10 +64,7 @@ label.h2{
 .campo{
     width: 75%;
     height: 30px;
-    margin-left: 0%;
-    margin-right: 0%
-    margin-bottom: 0%;
-    margin-top: 1px;
+    margin-top: 10px;
     border: dotted;
     border-color: hsla(80, 4%, 70%, 0.808);
     border-radius: 8px;

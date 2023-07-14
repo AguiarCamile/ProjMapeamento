@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="{% static 'css/cadPropriedade.css' %}">
 </head>
 <body>
-    <label class="lab-propriedade">
+    <div class="div-propriedade">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
             <h2>Cadastrar Propriedades</h2>
         </div>
-        <br>
         <div class="form-group">
         <label for="{{ form.Culturas_id.id_for_label }}">Culturas:</label>
         <select name="{{ form.Culturas_id.name }}" id="{{ form.Culturas_id.id_for_label }}" class="campo1">
@@ -33,16 +32,16 @@
         </div>
 
                 <div class="form-group mt-4">Área de Preservação Permanente: {{form.app}}
-                <input class="campo3" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">Reserva Legal: {{form.rl}}
-                <input class="campo4" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">Coordenada da Reserva: {{form.rl_coord}}
-                <input class="campo5" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">Tamanho da area: {{form.tamanho_area}}
-                <input class="campo6" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">
                     <input type="submit" class="btn-salv" value="Salvar">
@@ -53,6 +52,6 @@
                 </div>
             </form>
         </div>
-    </label>
+    </div>
 </body>
 </html>
