@@ -15,13 +15,13 @@
             <form name = "form2" id="form2" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}" method="post">
                 {% csrf_token %}
                 <div class="form-group mt-4">Nome: <!--{{form.nomeProprietarios}}-->
-                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="inserir nome do proprietário" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">CPF: <!--{{form.cpf}}-->
-                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="inserir CPF" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">Contato: <!--{{form.contato}}-->
-                <input class="campo-geral" type="text" placeholder="insira aqui" aria-label="Nome">
+                <input class="campo-geral" type="text" placeholder="insira o número para contato" aria-label="Nome">
                 </div>
                 <div class="form-group mt-4">
                     <input type="submit" class="btn-salv" value="Salvar">

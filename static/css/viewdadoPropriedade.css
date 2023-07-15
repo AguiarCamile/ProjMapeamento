@@ -18,7 +18,7 @@ body {
 .view-propriedade{
     background: white;
     max-width: 400px;
-    min-height: 60vh;
+    min-height: 40vh;
     padding: 2rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;

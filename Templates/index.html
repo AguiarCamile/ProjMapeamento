@@ -4,9 +4,6 @@
 {% block body%}
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!--<div class = "col-8 m-auto pt-2 pb-2 text-center">
-        <a href="/form" class="btn btn-success">Adicionar Cultura</a>
-    </div>-->
 
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
         <form method = "get">
@@ -42,16 +39,6 @@
         </table>
     </div>
 
-    <!--<div class = "col-8 m-auto pt-2 pb-2 text-center">
-        <a href="/form2" class="btn btn-success">Adicionar Proprietario</a>
-    </div>-->
-
-    <div class = "col-8 m-auto pt-2 pb-2 text-center">
-        <form method = "get">
-            <input type="text" id="search2" name="search" class="form-control" placeholder="Buscar">
-        </form>
-    </div>
-
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
     <table class="table">
             <!--Cabeçalho da tabela -->
@@ -84,22 +71,17 @@
         </table>
     </div>
 
-    <!--<div class = "col-8 m-auto pt-2 pb-2 text-center">
-        <a href="/form3" class="btn btn-success">Adicionar Propriedades</a>
-    </div>-->
-
-    <div class = "col-8 m-auto pt-2 pb-2 text-center">
-        <form method = "get">
-            <input type="text" id="search3" name="search" class="form-control" placeholder="Buscar">
-        </form>
-    </div>
-
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
     <table class="table">
             <!--Cabeçalho da tabela -->
             <thead class="thead-dark">
                   <tr class="table-dark">
                     <th scope="col">#</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Microrregião</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Cultura</th>
+                    <th scope="col">Proprietário</th>
                     <th scope="col">APP</th>
                     <th scope="col">Reserva Legal</th>
                     <th scope="col">Coordenada da Reserva</th>

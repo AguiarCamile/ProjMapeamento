@@ -3,7 +3,6 @@
 {% block title%}Tela Principal{% endblock %}
 {% block body%}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
-<div class="container-gera">
 <section id="scroll">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
@@ -14,9 +13,8 @@
                         <div class="p-5">
                             <h2 class="display-4">MapDB:</h2>
                             <h2 class="display-4"> Para que serve?</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam
-                                sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-                                voluptatum molestiae adipisci, beatae obcaecati.</p>
+                            <p>O MapDB tem por objetivo otimizar tarefas e fornecer uma interface intuitiva para que o usuário possa realizar a inserção de dados
+                                com facilidade, a fim de contribuir com todos os pesquisadores da área e proporcionar eficiência ao utilizar a aplicação web. .</p>
                         </div>
                     </div>
                 </div>
@@ -27,44 +25,20 @@
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
-                        <div class="p-5"><img src="{% static 'imagens/solo.jpeg' %}" class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
+                        <div class="p-5"><img src="{% static 'imagens/interrogacao.png' %}" class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
                     </div>
                     <div class="col-lg-6">
                         <div class="p-5">
-                            <h2 class="display-4">Voce sabe qual a impotancia de mapear solos?</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                            <h2 class="display-4">Como navegar pela aplicação?</h2>
+                            <p>Para realizar operações é fácil, basta seguir estes passos.</p>
+                            <p>1. Para cadastrar, clique em "Realizar Cadastro" na barra de navegação, ápos isso é só escolher a opção desejada. </p>
+                            <p>2. Para editar, vizualizar ou excluir dados, basta clicar em "Edição de dados" na barra de navegação. </p>
                         </div>
                     </div>
                 </div>
             </div>
 </section>
 
-<section id="scroll">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img src="{% static 'imagens/pimenta.png' %}" class="img-fluid rounded-circle" src="assets/img/01.jpg" alt="..." /></div>
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="p-5">
-                            <h2 class="display-4">O que sao culturas permanentes?</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam
-                                sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione
-                                voluptatum molestiae adipisci, beatae obcaecati.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-</section>
+    <h5 class="lista">Futuramente, queremos mostrar uma lista com as regiões que já foram mapeadas</h5>
 
-    <div class="passos">
-        <br>
-    <h2 class = "passo-passo1"> Como navegar pelo Website:</h2>
-    <p class = "passo-passo2">Para realizar operaçoes é fácil, basta seguir estes passos.</p>
-    <h2 class = "passo-passo3"> 01 </h2>
-    <p class = "passo-passo2">Para cadastrar, clique em "Realizar Cadastro" na barra de navegação, ápos isso é só escolher a opção desejada. </p>
-    <h2 class = "passo-passo3" > 02 </h2>
-    <p class = "passo-passo2">Para editar, vizualizar ou excluir dados, basta clicar em "Edição de dados" na barra de navegação. </p>
-    </div>
-<</div>
-{% endblock %}
+{% endblock%}
