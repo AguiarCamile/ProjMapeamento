@@ -21,7 +21,7 @@ from app.views import viewdados_cultura, viewdados_proprietario, viewdados_propr
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('project/', include('app.urls')),
+    path('', include('app.urls')),
     path('home/', home, name='home'),
     path('index/', index, name='index'),
     path('login/', login, name='login'),
