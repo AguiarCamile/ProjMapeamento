@@ -19,6 +19,7 @@ def create_cultura(request):
     return render(request, 'create_cultura.html')
 
 def create_propriedade(request):
+
     return render(request, 'create_propriedade.html')
 
 def create_proprietario(request):

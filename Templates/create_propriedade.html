@@ -5,33 +5,29 @@
     <meta charset="UTF-8">
     <title>Cadastrar Propriedade</title>
    <link rel="stylesheet" href="{% static 'css/cadPropriedade.css' %}">
+   <script src="{% static 'js/estado.js' %}" ></script>
+   <script src="{% static 'js/microrregiao.js' %}" ></script>
+   <script src="{% static 'js/cidade.js' %}"></script>
+
 </head>
 <body>
     <div class="div-propriedade">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
             <h2>Cadastrar Propriedades</h2>
         </div>
+
         <div class="form-group mt-4">Estado:
-        <select name="Estado" class="campo0">
-            <option value="Estado1">Opção 1</option>
-            <option value="opcao2">Opção 2</option>
-            <option value="opcao3">Opção 3</option>
-            </select>
+        <select id="estado-select" name="Estado" class="campo0"></select>
         </div>
+
         <div class="form-group mt-4">Microrregião:
-        <select name="Microrregião" class="campo01">
-            <option value="Microrregião1">Opção 1</option>
-            <option value="opcao2">Opção 2</option>
-            <option value="opcao3">Opção 3</option>
-            </select>
+        <select id="microrregiao-select" name="Microrregião" class="campo01"></select>
         </div>
+
         <div class="form-group mt-4">Cidade:
-        <select name="Cidade" class="campo02">
-            <option value="Cidade1">Opção 1</option>
-            <option value="opcao2">Opção 2</option>
-            <option value="opcao3">Opção 3</option>
-            </select>
+        <select id="cidade-select" name="Cidade" class="campo02"></select>
         </div>
+
         <div class="form-group">
         <label for="{{ form.Culturas_id.id_for_label }}">Culturas:</label>
         <select name="{{ form.Culturas_id.name }}" id="{{ form.Culturas_id.id_for_label }}" class="campo1">
