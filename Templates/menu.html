@@ -14,16 +14,16 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Edição de dados</a>
+          <a class="nav-link" href="{% url 'index' %}">Edição de dados</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Realizar Cadastro
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Cultura</a></li>
-            <li><a class="dropdown-item" href="#">Proprietário</a></li>
-            <li><a class="dropdown-item" href="#">Propriedade</a></li>
+            <li><a class="dropdown-item" href="{% url 'create_cultura' %}">Cultura</a></li>
+            <li><a class="dropdown-item" href="{% url 'create_proprietario' %}">Proprietário</a></li>
+            <li><a class="dropdown-item" href="{% url 'create_propriedade' %}">Propriedade</a></li>
           </ul>
         </li>
       </ul>
