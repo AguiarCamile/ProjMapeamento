@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Cadastrar Proprietário</title>
     <link rel="stylesheet" href="{% static 'css/cadProprietario.css' %}">
+    <script src="{% static 'js/botoes.js' %}"></script>
 </head>
 <body>
     <div class="div-proprietario">
@@ -12,7 +13,7 @@
             <h2>Cadastrar Proprietários</h2>
         </div>
         <div class = "col-8 m-auto pt-4 pb-2 text-center">
-            <form name = "form2" id="form2" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}" method="post">
+            <form name = "form2" id="form2" action="{% if db %}/update/{{db.id}}/{% else %}/create_proprietario/{% endif %}" method="post">
                 {% csrf_token %}
                 <div class="form-group mt-4">Nome: <!--{{form.nomeProprietarios}}-->
                 <input class="campo-geral" type="text" placeholder="inserir nome do proprietário" aria-label="Nome">

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Vizualização de dados da cultura</title>
     <link rel="stylesheet" href="{% static 'css/viewdadoCultura.css' %}">
+    <script src="{% static 'js/botoes.js' %}"></script>
 </head>
 <body>
     <label class="view-cultura">
@@ -20,7 +21,7 @@
         </div>
         <br> <br>
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
-            <button class="btn-volt">Voltar</button>
+            <button class="btn-volt" onclick="voltar()">Voltar</button>
             <!--<a href="/" class="btn-volt">Voltar</a>-->
         </div>
     </label>

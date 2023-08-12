@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Visualização dos dados do Proprietário</title>
     <link rel="stylesheet" href="{% static 'css/viewdadoProprietario.css' %}">
+    <script src="{% static 'js/botoes.js' %}"></script>
 </head>
 <body>
 <label class="view-proprietario">
@@ -19,7 +20,7 @@
     </div>
     <br> <br>
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
-        <button class="btn-volt">Voltar</button>
+        <button class="btn-volt" onclick="voltar()">Voltar</button>
             <!--<a href="/" class="btn btn-success">Voltar</a>-->
     </div>
     </label>

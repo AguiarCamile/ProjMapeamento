@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Cadastrar Cultura</title>
    <link rel="stylesheet" href="{% static 'css/cadCultura.css' %}">
+   <script src="{% static 'js/botoes.js' %}"></script>
 </head>
 <body>
     <div class="div-cultura">
@@ -23,12 +24,7 @@
                     <input type="submit" id="cadastrar" class="btn-salv" value="Salvar">
                 </div>
             </form>
-                <!--<p class="mensagem sucesso" id="mensagemSucesso">A Cultura foi cadastrada com sucesso.</p>
-                <p class="mensagem erro" id="mensagemErro">Erro ao cadastrar a Cultura. Por favor, tente novamente.</p>
-                <script src="script.js"></script>-->
-            <!--<p id="aviso" style="display: none; color: green;"></p>-->
-            <!--<script src="script.js"></script>-->
-            <button class="button-volt">Voltar</button>
+            <button class="button-volt" onclick="Home()">Voltar</button>
         </div>
     </div>
 </body>
