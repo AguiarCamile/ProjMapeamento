@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Visualização dos dados da Propriedade</title>
     <link rel="stylesheet" href="{% static 'css/viewdadoPropriedade.css' %}">
-    <script src="{% static 'js/botoes.js' %}"></script>
 </head>
 <body>
     <label class="view-propriedade">
@@ -15,19 +14,18 @@
         <br>
     <div class = "col-8 m-auto pt-4 pb-2 text-center">
         <strong> Estado:</strong> <br>
-        <strong> Microrregião:</strong> <br>
-        <strong> Cidade:</strong> <br>
-        <strong> Cultura:</strong> <br>
-        <strong> Proprietarios:</strong> <br>
+        <strong> Microrregião:</strong>  <br>
+        <strong> Cidade:</strong>  <br>
+        <strong> Cultura:</strong> {{dbs.Culturas}} <br>
+        <strong> Proprietarios:</strong> {{dbs.Proprietarios}} <br>
         <strong> APP:</strong> {{db.app}} <br>
         <strong> Reserva Legal:</strong> {{db.rl}} <br>
-        <strong> Coordenada da Reserva:</strong> {{db.rl_coord}} <br>
+        <strong> Coordenada da Reserva:</strong> {{db.rl_coordenadas}} <br>
         <strong> Tamanho da area:</strong> {{db.tamanho_area}} <br>
     </div>
         <br> <br>
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
         <button class="btn-volt" onclick="voltar()">Voltar</button>
-            <!--<a href="/" class="btn btn-success">Voltar</a>-->
     </div>
     </label>
 </body>
