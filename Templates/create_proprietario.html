@@ -13,23 +13,26 @@
             <h2>Cadastrar Proprietários</h2>
         </div>
         <div class = "col-8 m-auto pt-4 pb-2 text-center">
-            <form name = "form2" id="form2" action="{% if db %}/update/{{db.id}}/{% else %}/create_proprietario/{% endif %}" method="post">
+            <form name = "form" id="form" action="{% if db %}{% url 'update_proprietario' db.id %}{% else %}{% url 'create_proprietario' %}{% endif %}"  method="post">
                 {% csrf_token %}
-                <div class="form-group mt-4">Nome: <!--{{form.nomeProprietarios}}-->
-                <input class="campo-geral" type="text" placeholder="inserir nome do proprietário" aria-label="Nome">
+                <div class="form-group mt-4">Nome:
+                    <input class="campo-geral" type="text" placeholder="inserir nome do proprietário" name="{{ form.nomeProprietarios.name }}" value="{{ form.nomeProprietarios.value|default_if_none:'' }}" required>
                 </div>
-                <div class="form-group mt-4">CPF: <!--{{form.cpf}}-->
-                <input class="campo-geral" type="text" placeholder="inserir CPF" aria-label="Nome">
+
+                <div class="form-group mt-4">CPF:
+                    <input class="campo-geral" type="text" placeholder="inserir CPF" name="{{ form.cpf.name }}" value="{{ form.cpf.value|default_if_none:'' }}" required>
                 </div>
-                <div class="form-group mt-4">Contato: <!--{{form.contato}}-->
-                <input class="campo-geral" type="text" placeholder="insira o número para contato" aria-label="Nome">
+
+                <div class="form-group mt-4">Contato:
+                    <input class="campo-geral" type="text" placeholder="insira o número para contato" name="{{ form.contato.name }}" value="{{ form.contato.value|default_if_none:'' }}" required>
                 </div>
+
                 <div class="form-group mt-4">
                     <input type="submit" class="btn-salv" value="Salvar">
                 </div>
+
                 <div class = "col-8 m-auto pt-2 pb-2 text-center">
-                    <button class="btn-volt">Voltar</button>
-                <!--<a href="/" class="btn-volt">Voltar</a>-->
+                    <button class="btn-volt" onclick="Home()">Voltar</button>
                 </div>
             </form>
         </div>

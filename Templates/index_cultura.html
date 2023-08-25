@@ -30,14 +30,13 @@
                   </tr>
             </thead>
             <tbody>
-                {%for dbs in db%}
-
-                  <tr>
-                    <th scope="row">{{dbs.id}}</th>
-                    <td>{{dbs.TipoCultura}}</td>
-                    <td>
+                {% for dbs in cultura %}
+            <tr>
+                <th scope="row">{{ dbs.id }}</th>
+                <td>{{ dbs.TipoCultura }}</td>
+                <td>
                        <a href="{% url 'viewdados_cultura' dbs.id %}" class="btn btn-dark"> Visualizar </a>
-                       <a href="{% url 'edit_cultura' dbs.id %}" class="btn btn-primary"> Editar </a>
+                       <a href="{% url 'update_cultura' dbs.id %}" class="btn btn-primary"> Editar </a>
                        <a href="{% url 'delete_cultura' dbs.id %}" class="btn btn-danger"> Deletar </a>
 
                     </td>

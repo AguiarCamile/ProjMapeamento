@@ -3,69 +3,67 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar Propriedade</title>
-   <link rel="stylesheet" href="{% static 'css/cadPropriedade.css' %}">
-   <script src="{% static 'js/estado.js' %}" ></script>
-   <script src="{% static 'js/microrregiao.js' %}" ></script>
-   <script src="{% static 'js/cidade.js' %}"></script>
-   <script src="{% static 'js/botoes.js' %}"></script>
-
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="{% static 'css/cadPropriedade.css' %}">
+    <script src="{% static 'js/estado.js' %}" ></script>
+    <script src="{% static 'js/microrregiao.js' %}" ></script>
+    <script src="{% static 'js/cidade.js' %}"></script>
+    <script src="{% static 'js/botoes.js' %}"></script>
+    <script src="{% static 'js/registro.js' %}"></script>
 </head>
 <body>
     <div class="div-propriedade">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
             <h2>Cadastrar Propriedades</h2>
         </div>
+        <div class = "col-8 m-auto pt-4 pb-2 text-center">
+            <form name = "form" id="form" action="{% if db %}{% url 'update_propriedade' db.id %}{% else %}{% url 'create_propriedade' %}{% endif %}"  method="post">
+                {% csrf_token %}
 
-        <div class="form-group mt-4">Estado:
-        <select id="estado-select" name="Estado" class="campo0"></select>
-        </div>
-
-        <div class="form-group mt-4">Microrregião:
-        <select id="microrregiao-select" name="Microrregião" class="campo01"></select>
-        </div>
-
-        <div class="form-group mt-4">Cidade:
-        <select id="cidade-select" name="Cidade" class="campo02"></select>
-        </div>
-
-        <div class="form-group">
-        <label for="{{ form.Culturas_id.id_for_label }}">Culturas:</label>
-        <select name="{{ form.Culturas_id.name }}" id="{{ form.Culturas_id.id_for_label }}" class="campo1">
-            <option value="Cultura1">Opção 1</option>
-            <option value="opcao2">Opção 2</option>
-            <option value="opcao3">Opção 3</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-        <label for="{{ form.Proprietarios_id.id_for_label }}">Proprietários:</label>
-        <select name="{{ form.Proprietarios_id.name }}" id="{{ form.Proprietarios_id.id_for_label }}" class="campo2">
-            <option value="proprietario1">Proprietário 1</option>
-            <option value="proprietario2">Proprietário 2</option>
-            <option value="proprietario3">Proprietário 3</option>
-        </select>
-        </div>
-
-                <div class="form-group mt-4">Área de Preservação Permanente: {{form.app}}
-                <input class="campo-geral" type="text" placeholder="inserir APP" aria-label="Nome">
+                <div class="form-group mt-4">Estado:
+                    <select id="estado-select" name="Estado" class="campo0"></select>
                 </div>
-                <div class="form-group mt-4">Reserva Legal: {{form.rl}}
-                <input class="campo-geral" type="text" placeholder="inserir reserva" aria-label="Nome">
+
+                <div class="form-group mt-4">Microrregião:
+                     <select id="microrregiao-select" name="Microrregião" class="campo01"></select>
                 </div>
-                <div class="form-group mt-4">Coordenada da Reserva: {{form.rl_coord}}
-                <input class="campo-geral" type="text" placeholder="insira a coordenada" aria-label="Nome">
+
+                <div class="form-group mt-4">Cidade:
+                     <select id="cidade-select" name="Cidade" class="campo02"></select>
                 </div>
-                <div class="form-group mt-4">Tamanho da area: {{form.tamanho_area}}
-                <input class="campo-geral" type="text" placeholder="insira o tamanho da área" aria-label="Nome">
+
+                <div class="form-group">
+                    <label>Culturas:</label>
+                        {{ form.Culturas}}
+
+                <div class="form-group">
+                    <label>Proprietários:</label>
+                        {{ form.Proprietarios }}
+
+                <div class="form-group mt-4">Área de Preservação Permanente:
+                    <input class="campo-geral" type="text" placeholder="inserir APP" name="{{ form.app.name }}" value="{{ form.app.value|default_if_none:'' }}" required>
                 </div>
+
+                <div class="form-group mt-4">Reserva Legal:
+                    <input class="campo-geral" type="text" placeholder="inserir reserva" name="{{ form.rl.name }}" value="{{ form.rl.value|default_if_none:'' }}" required>
+                </div>
+
+                <div class="form-group mt-4">Coordenada da Reserva:
+                    <input class="campo-geral" type="text" placeholder="insira a coordenada" name="{{ form.rl_coordenadas.name }}" value="{{ form.rl_coordenadas.value|default_if_none:'' }}" required>
+                </div>
+
+                <div class="form-group mt-4">Tamanho da area:
+                    <input class="campo-geral" type="text" placeholder="insira o tamanho da área" name="{{ form.tamanho_area.name }}" value="{{ form.tamanho_area.value|default_if_none:'' }}" required>
+                </div>
+
                 <div class="form-group mt-4">
                     <input type="submit" class="btn-salv" value="Salvar">
                 </div>
+
                 <div class = "col-8 m-auto pt-2 pb-2 text-center">
                     <button class="btn-volt" onclick="Home()">Voltar</button>
-                <!--<a href="/" class="btn btn-success">Voltar</a>-->
                 </div>
+
             </form>
         </div>
     </div>

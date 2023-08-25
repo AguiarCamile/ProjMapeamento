@@ -6,6 +6,7 @@
     <title>Cadastrar Cultura</title>
    <link rel="stylesheet" href="{% static 'css/cadCultura.css' %}">
    <script src="{% static 'js/botoes.js' %}"></script>
+
 </head>
 <body>
     <div class="div-cultura">
@@ -13,17 +14,18 @@
             <h2>Cadastrar Cultura</h2>
         </div>
         <div class = "col-8 m-auto pt-4 pb-2 text-center">
-            <form name = "form" id="form" action="{% if db %}/update/{{db.id}}/{% else %}/create/{% endif %}" method="post">
+            <form name = "form" id="form" action="{% if db %}{% url 'update_cultura' db.id %}{% else %}{% url 'create_cultura' %}{% endif %}"  method="post">
                 {% csrf_token %}
                 <div>
-                    Nome: <!--{{form.Cultura}}-->
-                    <input class="campo" type="text" placeholder=" inserir Cultura" aria-label="Nome">
+                    Nome:
+                    <input class="campo" type="text" placeholder="inserir Cultura" name="{{ form.TipoCultura.name }}" value="{{ form.TipoCultura.value|default_if_none:'' }}" required>
                 </div>
 
                 <div class="form-group mt-4">
                     <input type="submit" id="cadastrar" class="btn-salv" value="Salvar">
                 </div>
             </form>
+
             <button class="button-volt" onclick="Home()">Voltar</button>
         </div>
     </div>

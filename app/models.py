@@ -2,17 +2,25 @@ from django.db import models
 
 # Create your models here.
 class Culturas(models.Model):
-    Cultura = models.CharField(max_length=45)
+    TipoCultura = models.CharField(max_length=40)
+    def __str__(self):
+        return self.TipoCultura
 
 class Proprietarios(models.Model):
     nomeProprietarios = models.CharField(max_length=60)
     cpf = models.CharField(max_length=11)
     contato = models.CharField(max_length=13)
 
+    def __str__(self):
+        return self.nomeProprietarios
+
 class Propriedades(models.Model):
-    Culturas_id = models.ForeignKey(Culturas, to_field='id', on_delete=models.CASCADE)
-    Proprietarios_id = models.ForeignKey(Proprietarios, to_field='id', on_delete=models.CASCADE)
-    app = models.CharField(max_length=10)
-    rl = models.CharField(max_length=10)
-    rl_coord = models.CharField(max_length=13)
+    Culturas = models.ForeignKey(Culturas, on_delete=models.CASCADE)
+    Proprietarios = models.ForeignKey(Proprietarios, on_delete=models.CASCADE)
+    app = models.CharField(max_length=20)
+    rl = models.CharField(max_length=50)
+    rl_coordenadas = models.CharField(max_length=13)
     tamanho_area = models.CharField(max_length=11)
+
+    def __str__(self):
+        return "Propriedade {}".format(self.id)

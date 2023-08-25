@@ -16,21 +16,35 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from app.views import home, index, login, create_cultura, create_proprietario, create_propriedade
+from app.views import login, home, index_cultura, index_proprietario, index_propriedade
+from app.views import create_cultura, create_proprietario, create_propriedade
 from app.views import viewdados_cultura, viewdados_proprietario, viewdados_propriedade
+from app.views import update_cultura, delete_cultura
+from app.views import update_proprietario, delete_proprietario
+from app.views import update_propriedade, delete_propriedade
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app.urls')),
+    #path('', login, name='login'),
+    path('', home, name='home'),
     path('home/', home, name='home'),
-    path('index/', index, name='index'),
     path('login/', login, name='login'),
     path('create_cultura/', create_cultura, name='create_cultura'),
     path('create_proprietario/', create_proprietario, name='create_proprietario'),
     path('create_propriedade/', create_propriedade, name='create_propriedade'),
-    path('viewdados_cultura/', viewdados_cultura, name='viewdados_cultura'),
-    path('viewdados_proprietario/', viewdados_proprietario, name='viewdados_proprietario'),
-    path('viewdados_propriedade/', viewdados_propriedade, name='viewdados_propriedade'),
+    path('viewdados_cultura/<int:pk>/', viewdados_cultura, name='viewdados_cultura'),
+    path('viewdados_proprietario/<int:pk>/', viewdados_proprietario, name='viewdados_proprietario'),
+    path('viewdados_propriedade/<int:pk>/', viewdados_propriedade, name='viewdados_propriedade'),
+    path('index_cultura/', index_cultura, name='index_cultura'),
+    path('index_proprietario/', index_proprietario, name='index_proprietario'),
+    path('index_propriedade/', index_propriedade, name='index_propriedade'),
+    path('update_cultura/<int:pk>/', update_cultura, name='update_cultura'),
+    path('update_proprietario/<int:pk>/', update_proprietario, name='update_proprietario'),
+    path('update_propriedade/<int:pk>/', update_propriedade, name='update_propriedade'),
+    path('delete_cultura/<int:pk>/', delete_cultura, name='delete_cultura'),
+    path('delete_proprietario/<int:pk>/', delete_proprietario, name='delete_proprietario'),
+    path('delete_propriedade/<int:pk>/', delete_propriedade, name='delete_propriedade')
+
 
 ]
 

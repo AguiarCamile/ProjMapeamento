@@ -33,7 +33,7 @@
                   </tr>
             </thead>
             <tbody>
-                {%for dbs in db%}
+                {%for dbs in proprietario%}
                   <tr>
                     <th scope="row">{{dbs.id}}</th>
                     <td>{{dbs.nomeProprietarios}}</td>
@@ -41,7 +41,7 @@
                     <td>{{dbs.contato}}</td>
                     <td>
                        <a href="{% url 'viewdados_proprietario' dbs.id %}" class="btn btn-dark"> Visualizar </a>
-                       <a href="{% url 'edit_proprietario' dbs.id %}" class="btn btn-primary"> Editar </a>
+                       <a href="{% url 'update_proprietario' dbs.id %}" class="btn btn-primary"> Editar </a>
                        <a href="{% url 'delete_proprietario' dbs.id %}" class="btn btn-danger"> Deletar </a>
                     </td>
                   </tr>

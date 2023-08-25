@@ -6,7 +6,7 @@ from app.models import Culturas, Proprietarios, Propriedades
 class CulturasForm(ModelForm):
     class Meta:
         model = Culturas
-        fields = ["Cultura"]
+        fields = ["TipoCultura"]
 
 
 class ProprietariosForm(ModelForm):
@@ -14,9 +14,11 @@ class ProprietariosForm(ModelForm):
         model = Proprietarios
         fields = ['nomeProprietarios', 'cpf', 'contato']
 
+
 class PropriedadesForm(ModelForm):
-    Culturas_id = forms.ModelChoiceField(queryset=Culturas.objects.all())
-    Proprietarios_id = forms.ModelChoiceField(queryset=Proprietarios.objects.all())
+    Culturas = forms.ModelChoiceField(queryset=Culturas.objects.all())
+    Proprietarios = forms.ModelChoiceField(queryset=Proprietarios.objects.all())
+
     class Meta:
         model = Propriedades
-        fields = ['Culturas_id', 'Proprietarios_id','app', 'rl', 'rl_coord', 'tamanho_area']
+        fields = ['Culturas', 'Proprietarios', 'app', 'rl', 'rl_coordenadas', 'tamanho_area']

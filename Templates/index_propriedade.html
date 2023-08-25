@@ -41,40 +41,12 @@
                   </tr>
             </thead>
             <tbody id="tabelaCorpo">
-                {%for dbs in db%}
-            <!--Inicio do corpo da tabela-->
-            <!--Primeira linha-->
-                  <!--<tr>
-                    <th scope="row">{{dbs.id}}</th>
-                    <th scope="row">
-                         {% for Estados in Estados_data %}
-                            {% if Estados.id == dbs.Estados %}
-                                {{ Estados.nome }}
-                            {% endif %}
-                        {% endfor %}
-                    </th>
-                    <th scope="row">
-                        {% for Microrregiao in Microrregiao_data %}
-                            {% if Microrregiao.id == dbs.Microrregiao %}
-                                {{ Microrregiao.nome }}
-                            {% endif %}
-                        {% endfor %}
-                    </th>
-                    <th scope="row">
-                        {% for Cidade in Cidade_data %}
-                            {% if Cidade.id == dbs.Cidade %}
-                                {{ Cidade.nome }}
-                            {% endif %}
-                        {% endfor %}
-                    </th>
-                    <th scope="row">{{ dbs.Estados }}</th>
-                    <th scope="row">{{ dbs.Microrregiao }}</th>
-                    <th scope="row">{{ dbs.Cidade }}</th>-->
+                {%for dbs in propriedade%}
                   <tr>
                     <th scope="row">{{dbs.id}}</th>
-                    <th scope="row"><span id="estadoSelecionado"></span></th>
-                    <th scope="row"><span id="microrregiaoSelecionada"></span></th>
-                    <th scope="row"><span id="cidadeSelecionada"></span></th>
+                    <th scope="row"></th>
+                    <th scope="row"></th>
+                    <th scope="row"></th>
                     <th scope="row">{{dbs.Culturas}}</th>
                     <th scope="row">{{dbs.Proprietarios}}</th>
                     <td>{{dbs.app}}</td>
@@ -83,7 +55,7 @@
                     <td>{{dbs.tamanho_area}}</td>
                     <td>
                        <a href="{% url 'viewdados_propriedade' dbs.id %}" class="btn btn-dark"> Visualizar </a>
-                       <a href="{% url 'edit_propriedade' dbs.id %}" class="btn btn-primary"> Editar </a>
+                       <a href="{% url 'update_propriedade' dbs.id %}" class="btn btn-primary"> Editar </a>
                        <a href="{% url 'delete_propriedade' dbs.id %}" class="btn btn-danger"> Deletar </a>
                     </td>
                   </tr>
