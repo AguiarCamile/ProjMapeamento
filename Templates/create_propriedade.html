@@ -5,11 +5,8 @@
     <meta charset="UTF-8">
     <title>Formulário de Cadastro</title>
     <link rel="stylesheet" href="{% static 'css/cadPropriedade.css' %}">
-    <script src="{% static 'js/estado.js' %}" ></script>
-    <script src="{% static 'js/microrregiao.js' %}" ></script>
-    <script src="{% static 'js/cidade.js' %}"></script>
     <script src="{% static 'js/botoes.js' %}"></script>
-    <script src="{% static 'js/registro.js' %}"></script>
+    <script src="{% static 'js/api.js' %}"></script>
 </head>
 <body>
     <div class="div-propriedade">
@@ -21,15 +18,15 @@
                 {% csrf_token %}
 
                 <div class="form-group mt-4">Estado:
-                    <select id="estado-select" name="Estado" class="campo0"></select>
+                    <select id="estado" name="{{ form.Estado.name }}" class="campo0"></select>
                 </div>
 
                 <div class="form-group mt-4">Microrregião:
-                     <select id="microrregiao-select" name="Microrregião" class="campo01"></select>
+                     <select id="microrregiao" name="{{ form.Microrregiao.name }}" class="campo01"></select>
                 </div>
 
                 <div class="form-group mt-4">Cidade:
-                     <select id="cidade-select" name="Cidade" class="campo02"></select>
+                     <select id="cidade" name="{{ form.Cidade.name }}" class="campo02"></select>
                 </div>
 
                 <div class="form-group">

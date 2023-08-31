@@ -22,9 +22,17 @@ from app.views import viewdados_cultura, viewdados_proprietario, viewdados_propr
 from app.views import update_cultura, delete_cultura
 from app.views import update_proprietario, delete_proprietario
 from app.views import update_propriedade, delete_propriedade
+from rest_framework import routers
+from app.viewsets import CulturasViewSet, ProprietariosViewSet, PropriedadesViewSet
+
+router = routers.DefaultRouter()
+router.register(r'cultura', CulturasViewSet, basename="Culturas")
+router.register(r'proprietario', ProprietariosViewSet, basename="Proprietarios")
+router.register(r'propriedade', PropriedadesViewSet, basename="Propriedades")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('app.urls')),
     #path('', login, name='login'),
     path('', home, name='home'),
     path('home/', home, name='home'),
@@ -43,7 +51,8 @@ urlpatterns = [
     path('update_propriedade/<int:pk>/', update_propriedade, name='update_propriedade'),
     path('delete_cultura/<int:pk>/', delete_cultura, name='delete_cultura'),
     path('delete_proprietario/<int:pk>/', delete_proprietario, name='delete_proprietario'),
-    path('delete_propriedade/<int:pk>/', delete_propriedade, name='delete_propriedade')
+    path('delete_propriedade/<int:pk>/', delete_propriedade, name='delete_propriedade'),
+    path("api/", include(router.urls))
 
 
 ]

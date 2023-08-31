@@ -9,7 +9,6 @@
     <title>Mapeamento de cultura perene</title>
     <!-- link bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <script src="{% static 'js/registro.js' %}"></script>
 </head>
 <body>
      <div class = "col-8 m-auto pt-2 pb-2 text-center">
@@ -44,11 +43,11 @@
                 {%for dbs in propriedade%}
                   <tr>
                     <th scope="row">{{dbs.id}}</th>
-                    <th scope="row"></th>
-                    <th scope="row"></th>
-                    <th scope="row"></th>
-                    <th scope="row">{{dbs.Culturas}}</th>
-                    <th scope="row">{{dbs.Proprietarios}}</th>
+                    <td>{{dbs.Estado}}</td>
+                    <td>{{dbs.Microrregiao}}</td>
+                    <td>{{dbs.Cidade}}</td>
+                    <th>{{dbs.Culturas}}</th>
+                    <th>{{dbs.Proprietarios}}</th>
                     <td>{{dbs.app}}</td>
                     <td>{{dbs.rl}}</td>
                     <td>{{dbs.rl_coordenadas}}</td>

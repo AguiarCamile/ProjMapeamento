@@ -15,6 +15,9 @@ class Proprietarios(models.Model):
         return self.nomeProprietarios
 
 class Propriedades(models.Model):
+    Estado = models.CharField(max_length=40)
+    Microrregiao = models.CharField(max_length=40)
+    Cidade = models.CharField(max_length=40)
     Culturas = models.ForeignKey(Culturas, on_delete=models.CASCADE)
     Proprietarios = models.ForeignKey(Proprietarios, on_delete=models.CASCADE)
     app = models.CharField(max_length=20)
