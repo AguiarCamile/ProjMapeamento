@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from app.views import login, home, index_cultura, index_proprietario, index_propriedade
+from app.views import login1, process_login, logouts, home, index_cultura, index_proprietario, index_propriedade
 from app.views import create_cultura, create_proprietario, create_propriedade
 from app.views import viewdados_cultura, viewdados_proprietario, viewdados_propriedade
 from app.views import update_cultura, delete_cultura
@@ -36,7 +36,9 @@ urlpatterns = [
     #path('', login, name='login'),
     path('', home, name='home'),
     path('home/', home, name='home'),
-    path('login/', login, name='login'),
+    path('login/', login1, name='login'),
+    path('process_login/', process_login),
+    path('logouts/', logouts, name='logouts'),
     path('create_cultura/', create_cultura, name='create_cultura'),
     path('create_proprietario/', create_proprietario, name='create_proprietario'),
     path('create_propriedade/', create_propriedade, name='create_propriedade'),

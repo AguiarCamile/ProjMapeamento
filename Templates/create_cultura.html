@@ -9,6 +9,7 @@
 
 </head>
 <body>
+{% if request.user.is_authenticated %}
     <div class="div-cultura">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
             <h2>Cadastrar Cultura</h2>
@@ -29,5 +30,14 @@
             <button class="button-volt" onclick="Home()">Voltar</button>
         </div>
     </div>
+{% else %}
+<h2> Área proibida!  </h2>
+
+<div class="link-login">
+    <a href="/login"> Clique aqui para fazer login </a>
+</div>
+
+{% endif %}
+
 </body>
 </html>

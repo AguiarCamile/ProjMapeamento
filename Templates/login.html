@@ -9,13 +9,23 @@
 <body>
     <div class="Login">
         <h1>Login</h1>
+        <form name="form-login" id="form-login" method="post" action="/process_login/">
+            {% if msg%}
+            <div class="alert {{class}}">
+                {{msg}}
+            </div>
+            {% endif%}
+
+
+            {% csrf_token %}
         <div>
-            <input class="login-e-senha" type="text" placeholder= "User">
+            <input class="login-e-senha" type="text" name= "nome" placeholder= "User">
         </div>
         <div>
-            <input class="login-e-senha" type="password" placeholder= "Senha">
+            <input class="login-e-senha" type="password" name= "senha" placeholder= "Senha">
         </div>
-        <button class="button-login">Entrar</button>
+            <input class="button-login" type="submit" value="Entrar">
+        </form>
     </div>
 </body>
 </html>

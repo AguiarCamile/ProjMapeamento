@@ -9,6 +9,7 @@
     <script src="{% static 'js/api.js' %}"></script>
 </head>
 <body>
+{% if request.user.is_authenticated %}
     <div class="div-propriedade">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
             <h2>Cadastrar Propriedades</h2>
@@ -64,5 +65,13 @@
             </form>
         </div>
     </div>
+
+{% else %}
+<h2> Área proibida!  </h2>
+<br>
+<a href="/login"> Clique aqui para fazer login </a>
+
+{% endif %}
+
 </body>
 </html>

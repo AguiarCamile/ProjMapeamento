@@ -27,3 +27,7 @@ class Propriedades(models.Model):
 
     def __str__(self):
         return "Propriedade {}".format(self.id)
+
+#class Login(models.Model):
+#    user = models.CharField(max_length=10)
+#    password = models.CharField(max_length=8)

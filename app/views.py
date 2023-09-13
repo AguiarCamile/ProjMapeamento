@@ -1,9 +1,27 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from app.form import CulturasForm, ProprietariosForm, PropriedadesForm
 from app.models import Culturas, Proprietarios, Propriedades
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 
-def login(request):
+def login1(request):
     return render(request, 'login.html')
+
+def process_login (request):
+    data = {}
+    user = authenticate(username=request.POST['nome'], password=request.POST['senha'])
+    if user is not None:
+        login(request, user)
+        return redirect('home')
+    else:
+        data['msg'] = 'Usuário ou senha inválidos'
+        data['class'] = 'alert-danger'
+
+        return render(request, 'login.html', data)
+
+def logouts(request):
+    logout(request)
+    return redirect('login')
 
 def home(request):
     return render(request, 'home.html')

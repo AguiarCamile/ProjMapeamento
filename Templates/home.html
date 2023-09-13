@@ -2,6 +2,7 @@
 {% load static %}
 {% block title%}Tela Principal{% endblock %}
 {% block body%}
+{% if request.user.is_authenticated %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 <section id="scroll">
             <div class="container px-5">
@@ -39,6 +40,11 @@
             </div>
 </section>
 
+{% else %}
+<h2> Área proibida!  </h2>
 
+<a href="login/"> Clique aqui para fazer login </a>
+
+{% endif %}
 
 {% endblock%}

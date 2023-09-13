@@ -8,6 +8,7 @@
     <script src="{% static 'js/botoes.js' %}"></script>
 </head>
 <body>
+{% if request.user.is_authenticated %}
     <label class="view-cultura">
 
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
@@ -24,6 +25,14 @@
             <button class="btn-volt" onclick="voltar()">Voltar</button>
         </div>
     </label>
+
+{% else %}
+<h2> Área proibida! </h2>
+
+<a href="/login"> Clique aqui para fazer login </a>
+
+{% endif %}
+
 </body>
 </html>
 

@@ -8,6 +8,7 @@
     <script src="{% static 'js/botoes.js' %}"></script>
 </head>
 <body>
+{% if request.user.is_authenticated %}
     <div class="div-proprietario">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
             <h2>Cadastrar Proprietários</h2>
@@ -37,5 +38,13 @@
             </form>
         </div>
     </div>
+
+{% else %}
+<h2> Área proibida! </h2>
+
+<a href="/login"> Clique aqui para fazer login </a>
+
+{% endif %}
+
 </body>
 </html>
