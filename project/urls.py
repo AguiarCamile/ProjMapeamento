@@ -33,7 +33,7 @@ router.register(r'propriedade', PropriedadesViewSet, basename="Propriedades")
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
-    #path('', login, name='login'),
+    path('', login1, name='login'),
     path('', home, name='home'),
     path('home/', home, name='home'),
     path('login/', login1, name='login'),

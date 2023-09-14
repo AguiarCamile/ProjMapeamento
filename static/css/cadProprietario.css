@@ -70,3 +70,35 @@ div.h2{
     border-radius: 8px;
     border: 1px;
 }
+
+h2 {
+    font-size: 24px;
+    /*color: #FF5733;*/
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+.prohibited-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 300px;
+
+}
