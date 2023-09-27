@@ -15,7 +15,7 @@ def process_login (request):
         return redirect('home')
     else:
         data['msg'] = 'Usuário ou senha inválidos'
-        data['class'] = 'alert-danger'
+        data['class'] = 'alert alert-danger'
 
         return render(request, 'login.html', data)
 
