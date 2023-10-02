@@ -75,14 +75,14 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#    'ENGINE': 'django.db.backends.sqlite3',
-#    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-
-#}
 DATABASES = {
+    'default': {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+
+}
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'banco',
@@ -95,7 +95,7 @@ DATABASES = {
         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         }
     }
-}
+}"""
 
 
 # Password validation
