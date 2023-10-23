@@ -1,15 +1,8 @@
-* {
+body {
     margin: 0;
     border: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    margin-bottom: 7px;
-}
-
-body {
-    background: linear-gradient(80deg, greenyellow, darkgreen);
-    background-repeat: no-repeat;
+    background: #e4e4e4ce;
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
@@ -18,12 +11,35 @@ body {
 }
 
 .div-proprietario{
+    border: 0;
     background: white;
-    max-width: 400px;
-    min-height: 50vh;
-    padding: 1rem;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 410px;
+    min-height: 48vh;
+    padding: 2rem;
+    box-shadow: 0px 0px 20px rgba(0.2, 0.2, 0.2, 0.2);
     border-radius: 8px;
+    margin: auto ;
+    margin-top: 90px;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group h5 {
+    display: inline-block;
+    width: auto;
+    text-align: right;
+    margin-right: 10px;
+
+.form-group input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 div.h2{
@@ -31,74 +47,27 @@ div.h2{
     margin-bottom: 2rem;
     margin-padding: 5%;
     position: relative;
-
+    justify-content: center;
 }
 
-.btn-salv{
+.btn-salv, .btn-volt {
     background-color: darkgreen;
-    border-color:rgba(198, 247, 100, 0.808);
+    border-color: rgba(198, 247, 100, 0.808);
     color: white;
-    width: 100%;
+    width: 220px;
     height: 40px;
-    margin-top: 15px;
-    margin-bottom: 12px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     font-size: large;
-    align-items: center;
-    border-radius: 8px;
-}
-
-.btn-volt{
-    background-color: darkgreen;
-    border-color:rgba(198, 247, 100, 0.808);
-    color: white;
-    width: 100%;
-    height: 40px;
-    padding: 0%;
-    font-size: large;
-    align-items: center;
     border-radius: 8px;
     position: relative;
-    top: -10px;
-    left: 0px;
+    align-items: center;
+    justify-content: center;
 }
 
 .campo-geral{
     width: 75%;
     height: 30px;
-    border: dotted;
-    border-color: hsla(80, 4%, 70%, 0.808);
-    border-radius: 8px;
-    border: 1px;
-}
-
-h2 {
-    font-size: 24px;
-    /*color: #FF5733;*/
-    text-align: center;
-    margin-top: 20px;
-}
-
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-}
-
-
-a:hover {
-    text-decoration: underline;
-}
-.prohibited-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    margin: 20px auto;
-    max-width: 300px;
-
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

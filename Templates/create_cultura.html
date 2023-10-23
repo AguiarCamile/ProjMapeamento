@@ -1,4 +1,6 @@
+{% extends 'menu.html' %}
 {% load static %}
+{% block body%}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,6 +8,8 @@
     <title>Cadastrar Cultura</title>
    <link rel="stylesheet" href="{% static 'css/cadCultura.css' %}">
    <script src="{% static 'js/botoes.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -17,9 +21,9 @@
         <div class = "col-8 m-auto pt-4 pb-2 text-center">
             <form name = "form" id="form" action="{% if db %}{% url 'update_cultura' db.id %}{% else %}{% url 'create_cultura' %}{% endif %}"  method="post">
                 {% csrf_token %}
-                <div>
-                    Nome:
-                    <input class="campo" type="text" placeholder="inserir Cultura" name="{{ form.TipoCultura.name }}" value="{{ form.TipoCultura.value|default_if_none:'' }}" required>
+                <div class="flex-container">
+                    <h5>Nome:</h5>
+                    <input class="campo" type="text" placeholder="inserir Cultura" name="{{ form.TipoCultura.name }}" value="{{ form.Tipocultura.value|default_if_none:'' }}" required>
                 </div>
 
                 <div class="form-group mt-4">
@@ -27,9 +31,18 @@
                 </div>
             </form>
 
-            <button class="button-volt" onclick="Home()">Voltar</button>
+            <button class="button-volt" onclick="voltar()">Voltar</button>
         </div>
     </div>
+    <style>
+    div.h2{
+    font-weight: 600;
+    margin-padding: 3%;
+    position: relative;
+    font-weight: bold;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    </style>
 {% else %}
 <div class="prohibited-container">
     <h2>Área proibida!</h2>
@@ -37,6 +50,6 @@
 </div>
 
 {% endif %}
-
 </body>
 </html>
+{% endblock %}

@@ -1,14 +1,22 @@
+{% extends 'menu.html' %}
 {% load static %}
+{% block body%}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Formulário de Cadastro</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/cadPropriedade.css' %}">
     <script src="{% static 'js/botoes.js' %}"></script>
     <script src="{% static 'js/api.js' %}"></script>
 </head>
+
 <body>
+<br><br><br><br>
 {% if request.user.is_authenticated %}
     <div class="div-propriedade">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
@@ -19,24 +27,26 @@
                 {% csrf_token %}
 
                 <div class="form-group mt-4">Estado:
-                    <select id="estado" name="{{ form.Estado.name }}" class="campo0"></select>
+                     <select id="estado" name="{{ form.Estado.name }}" value="{{ form.Estado.value}}" class="campo0"></select>
                 </div>
 
-                <div class="form-group mt-4">Microrregião:
-                     <select id="microrregiao" name="{{ form.Microrregiao.name }}" class="campo01"></select>
+                <div class="form-group mt-4">Microrregiao:
+                     <select id="microrregiao" name="{{ form.Microrregiao.name }}" value="{{ form.Microrregiao.value}}" class="campo01"></select>
                 </div>
 
                 <div class="form-group mt-4">Cidade:
-                     <select id="cidade" name="{{ form.Cidade.name }}" class="campo02"></select>
+                     <select id="cidade" name="{{ form.Cidade.name }}" value="{{ form.Cidade.value}}" class="campo02"></select>
                 </div>
 
                 <div class="form-group">
-                    <label>Culturas:</label>
-                        {{ form.Culturas}}
+                    <label placeholder="Selecione uma cultura">Cultura:</label>
+                        {{ form.Cultura}}
+                </div>
 
                 <div class="form-group">
-                    <label>Proprietários:</label>
-                        {{ form.Proprietarios }}
+                    <label placeholder="Selecione um Proprietário">Proprietário:</label>
+                        {{ form.Proprietario }}
+                </div>
 
                 <div class="form-group mt-4">Área de Preservação Permanente:
                     <input class="campo-geral" type="text" placeholder="inserir APP" name="{{ form.app.name }}" value="{{ form.app.value|default_if_none:'' }}" required>
@@ -56,12 +66,8 @@
 
                 <div class="form-group mt-4">
                     <input type="submit" class="btn-salv" value="Salvar">
+                    <button class="btn-volt" onclick="voltar()">Voltar</button>
                 </div>
-
-                <div class = "col-8 m-auto pt-2 pb-2 text-center">
-                    <button class="btn-volt" onclick="Home()">Voltar</button>
-                </div>
-
             </form>
         </div>
     </div>
@@ -73,6 +79,6 @@
 </div>
 
 {% endif %}
-
 </body>
 </html>
+{% endblock %}

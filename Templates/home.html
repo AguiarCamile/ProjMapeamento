@@ -1,46 +1,224 @@
-{% extends 'menu.html' %}
 {% load static %}
-{% block title%}Tela Principal{% endblock %}
-{% block body%}
 {% if request.user.is_authenticated %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <script src="{% static 'js/botoes.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<header id="header" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <h5>MAPDB</h5>
 
-<section id="scroll">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img src="{% static 'imagens/logo.png.png' %}" class="img-fluid rounded-circle" src="assets/img/01.jpg" alt="..." /></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav justify-content-center" style="color: white;">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tutorial">TUTORIAL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#curiosidade">CURIOSIDADES</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        REALIZAR CADASTRO
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="blogDropdown">
+                        <a class="dropdown-item" href="{% url 'create_cultura' %}">Cultura</a>
+                        <a class="dropdown-item" href="{% url 'create_proprietario' %}">Proprietário</a>
+                        <a class="dropdown-item" href="{% url 'create_propriedade' %}">Propriedade</a>
                     </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="p-5">
-                            <h2 class="display-4">MapDB:</h2>
-                            <h2 class="display-4"> Para que serve?</h2>
-                            <p>O MapDB tem por objetivo otimizar tarefas e fornecer uma interface intuitiva para que o usuário possa realizar a inserção de dados
-                                com facilidade, a fim de contribuir com todos os pesquisadores da área e proporcionar eficiência ao utilizar a aplicação web. .</p>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        EDITAR DADOS
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="servicosDropdown">
+                        <a class="dropdown-item" href="{% url 'index_cultura' %}">Cultura</a>
+                        <a class="dropdown-item" href="{% url 'index_proprietario' %}">Proprietário</a>
+                        <a class="dropdown-item" href="{% url 'index_propriedade' %}">Propriedade</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logouts' %}">SAIR</a>
+                </li>
+            </ul>
+        </div>
+    </div><!--container-->
+</header>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var header = $("#header");
+            var headerHeight = header.height();
+
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > headerHeight) {
+                    header.addClass("navbar-scrolled");
+                } else {
+                    header.removeClass("navbar-scrolled");
+                }
+            });
+        });
+    </script>
+    <section class="banner" style="background-image: url('{% static 'imagens/background.jpg' %}')">
+        <h1>BEM VINDO AO <span>MAPDB</span></h1>
+    </section>
+<!-- About-->
+<section class="page-section" id="tutorial">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase" style="font-weight: bold;">Tutorial</h2>
+                    <h3 class="section-subheading text-muted">Guia de como navegar pela aplicação:</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image">
+                            <img class="rounded-circle img-fluid" src="{% static 'imagens/cad.png' %}" alt="..." />
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Como realizar</h4>
+                                <h4 class="subheading">o cadastro de dados?</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Na barra de navegação acima, procure a opção "Realizar cadastro",
+                                ao achar, clique e apareçerá as opçoes disponíveis.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'imagens/edit.png' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Como realizar</h4>
+                                <h4 class="subheading">a edição de dados?</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Se seu desejo é visualizar, editar ou excluir dados,
+                                na barra de navegação acima, procure a opção "Editar dados".</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'imagens/sair.png' %}" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Encerrar sessão</h4>
+                                <h4 class="subheading">Logout</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Na barra de navegação acima procure pela opção "Sair"
+                                    e sairá de sua conta.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                Espero
+                                <br />
+                                ter
+                                <br />
+                                ajudado!
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+</section>
+<!-- Portfolio Grid-->
+        <section class="page-section" id="curiosidade">
+            <div class="container">
+                <div class="text-center">
+                    <br> <br>
+                    <h2 class="section-heading text-uppercase" style="color: white;">Curiosidades:</h2>
+                    <h3 class="section-subheading text-muted" style="color: #fff;">As três principais culturas permanentes de Capitão Poço.</h3>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item" style="background-color: #fff; border-radius: 8px;">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'imagens/laranja.png' %}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Citros</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item" style="background-color: #fff; border-radius: 8px;">
+                            <img class="img-fluid" src="{% static 'imagens/dende.png' %}" alt="..." />
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Dendê</div>
+                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item" style="background-color: #fff; border-radius: 8px;">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="{% static 'imagens/planta.png' %}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Pimenta do Reino</div>
+                                <div class="portfolio-caption-subheading text-muted">Identity</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-</section>
-
-<section>
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6">
-                        <div class="p-5"><img src="{% static 'imagens/interrogacao.png' %}" class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
+        </section>
+<!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; MapDB 2023</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/seu_perfil" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/seu_perfil" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/seu_perfil" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="p-5">
-                            <h2 class="display-4">Como navegar pela aplicação?</h2>
-                            <p>Para realizar operações é fácil, basta seguir estes passos.</p>
-                            <p>1. Para cadastrar, clique em "Realizar Cadastro" na barra de navegação, ápos isso é só escolher a opção desejada. </p>
-                            <p>2. Para editar, vizualizar ou excluir dados, basta clicar em "Edição de dados" na barra de navegação. </p>
-                        </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
                     </div>
                 </div>
             </div>
-</section>
-
+        </footer>
+</body>
+</html>
 {% else %}
 
 <div class="prohibited-container">
@@ -50,5 +228,3 @@
 
 
 {% endif %}
-
-{% endblock%}
