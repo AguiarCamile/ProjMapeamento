@@ -98,19 +98,21 @@ body {
     margin-bottom: 0px;
     margin: auto ;
 }
-    /* Estiliza o rótulo (label) */
+.form-group {
+    margin: 10px 0; /* Espaçamento superior e inferior */
+}
+
+/* Estilo para as etiquetas (labels) */
 .form-group label {
-    font-weight: bold;
+    display: block;
     margin-bottom: 5px;
 }
 
-    /* Estiliza o campo de seleção (select) */
+/* Estilo para os elementos de seleção (select) */
 .form-group select {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f8f8f8;
     font-size: 16px;
-    color: #333;
 }
