@@ -13,20 +13,27 @@
             {{msg}}
         </div>
    {% endif%}
-
-    <div class="Login">
-        <h1>Login</h1>
-        <form name="form-login" id="form-login" method="post" action="/process_login/">
-
-            {% csrf_token %}
-        <div>
-            <input class="login-e-senha" type="text" name= "nome" placeholder= "User">
-        </div>
-        <div>
-            <input class="login-e-senha" type="password" name= "senha" placeholder= "Senha">
-        </div>
-            <input class="button-login" type="submit" value="Entrar">
-        </form>
+<div class="main-login">
+    <div class="left-login">
+        <h1><strong>Faça login <br> E acesse este projeto</strong></h1>
+        <img src="{% static 'imagens/animacao_pesquisa.svg' %}" class="left-login-img" alt="Animação de pesquisa">
     </div>
+    <div class="right-login">
+        <div class="Login">
+            <h4>Login</h4>
+            <form name="form-login" id="form-login" method="post" action="/process_login/">
+
+                {% csrf_token %}
+            <div>
+                <input class="login-e-senha" type="text" name= "nome" placeholder= "User">
+            </div>
+            <div>
+                <input class="login-e-senha" type="password" name= "senha" placeholder= "Senha">
+            </div>
+                <input class="button-login" type="submit" value="Entrar">
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
