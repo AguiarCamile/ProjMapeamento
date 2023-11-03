@@ -34,11 +34,39 @@
                 </div>
 
                 <div class="row mt-4">
-                    <div class="col-12 col-md-8 m-auto text-center">
+                    <div class="col-12 col-md-8 m-auto text-center button-container">
                         <input type="submit" class="btn-salv" value="Salvar">
                         <button class="btn-volt" onclick="voltar()">Voltar</button>
                     </div>
                 </div>
+
+                <style>
+                    .button-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+
+                    .btn-salv, .btn-volt {
+                        background-color: darkgreen;
+                        border-color: rgba(198, 247, 100, 0.808);
+                        color: white;
+                        width: 220px;
+                        height: 40px;
+                        margin-top: 10px;
+                        margin-bottom: 5px;
+                        font-size: large;
+                        border-radius: 8px;
+                    }
+
+                    .campo-geral{
+                        width: 75%;
+                        height: 30px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                    }
+                </style>
 
             </form>
         </div>

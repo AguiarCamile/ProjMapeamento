@@ -66,8 +66,8 @@ div.h2{
 }
 
 .campo-geral{
-    width: 75%;
+    width: 80%;
     height: 30px;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 5px;
 }

@@ -7,20 +7,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapeamento de cultura perene</title>
-    <!-- link bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/indexcult.css' %}">
+    <script src="{% static 'js/paginacao.js' %}"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 {% if request.user.is_authenticated %}
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
+        <h2 class="topo">TABELA DAS CULTURAS REGISTRADAS</h2>
         <form method = "get">
             <input type="text" id="search" name="search" class="form-control" placeholder="Buscar">
         </form>
     </div>
 
     <div class = "col-8 m-auto pt-2 pb-2 text-center">
-    <table class="table">
+    <table class="table" id="myTable">
 
             <thead class="thead-dark">
                   <tr class="table-dark">
@@ -35,8 +37,8 @@
                 <th scope="row">{{ dbs.id }}</th>
                 <td>{{ dbs.TipoCultura }}</td>
                 <td>
-                       <a href="{% url 'viewdados_cultura' dbs.id %}" class="btn btn-dark"> Visualizar </a>
-                       <a href="{% url 'update_cultura' dbs.id %}" class="btn btn-primary"> Editar </a>
+                       <!--<a href="{% url 'viewdados_cultura' dbs.id %}" class="btn btn-dark"> Visualizar </a>-->
+                       <a href="{% url 'update_cultura' dbs.id %}" class="btn btn-success"> Editar </a>
                        <a href="{% url 'delete_cultura' dbs.id %}" class="btn btn-danger"> Deletar </a>
 
                     </td>
@@ -44,6 +46,11 @@
                 {%endfor%}
           </tbody>
         </table>
+        <div class="pagination">
+            <a href="javascript:void(0);" class="prev" disabled>Anterior</a>
+            <a href="javascript:void(0);" class="active">1</a>
+            <a href="javascript:void(0);" class="next">Próximo</a>
+        </div>
     </div>
 
 {% else %}

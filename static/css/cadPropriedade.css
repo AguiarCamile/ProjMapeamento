@@ -3,7 +3,7 @@ body {
     border: 0;
     padding: 0;
     background: #e4e4e4ce;
-    min-height: 100vh;
+    min-height: 110vh;
     min-width: 100vw;
     display: flex;
     align-items: center;
@@ -11,58 +11,76 @@ body {
 }
 
 .div-propriedade {
-    display: flex;
     flex-direction: column;
-    align-items: center;
+    background: white;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: white;
     max-width: 700px;
-    min-height: 50vh;
+    min-height: 40vh;
     padding: 1rem;
     box-shadow: 0px 0px 20px rgba(0.2, 0.2, 0.2, 0.2);
     border-radius: 8px;
-    margin-top: 100px;
-    margin-bottom: 0px;
-    margin: auto ;
 }
 
-/* Estilo para a seção de cabeçalho */
-.col-8 h2 {
-    font-size: 24px;
+div.h2 {
+    font-size: 23px;
     color: #333;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    padding: 1px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-padding: 2%;
+    position: relative;
+    justify-content: center;
 }
 
-/* Estilo para o formulário com duas colunas */
 #form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas com largura igual */
-    gap: 20px; /* Espaço entre as colunas */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     width: 100%;
-    /*max-width: 800px;  Ajuste o tamanho máximo conforme necessário */
-    margin-top: 20px;
+    max-width: 800px;
+    margin-top: 1px;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Estilo para os campos de seleção */
 .select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    margin-bottom: 5px; /* Margem inferior reduzida */
+    margin-bottom: 5px;
 }
 
-/* Estilo para os campos de entrada de texto */
 .campo-geral {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    margin-bottom: 6px; /* Margem inferior reduzida */
+    margin-bottom: 2px; /* Margem inferior reduzida */
 }
 
-/* Estilo para o botão de submit */
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    color: #333;
+}
+
 .btn-salv {
     background-color: darkgreen;
     color: #fff;
@@ -73,7 +91,6 @@ body {
     cursor: pointer;
 }
 
-/* Estilo para o botão "Voltar" */
 .btn-volt {
     background-color: #ccc;
     color: #333;
@@ -82,37 +99,4 @@ body {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-}
-
-.div-propriedade {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: white;
-    max-width: 700px;
-    min-height: 30vh;
-    padding: 1rem;
-    box-shadow: 0px 0px 20px rgba(0.2, 0.2, 0.2, 0.2);
-    border-radius: 8px;
-    margin-top: 100px;
-    margin-bottom: 0px;
-    margin: auto ;
-}
-.form-group {
-    margin: 10px 0; /* Espaçamento superior e inferior */
-}
-
-/* Estilo para as etiquetas (labels) */
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-/* Estilo para os elementos de seleção (select) */
-.form-group select {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
 }

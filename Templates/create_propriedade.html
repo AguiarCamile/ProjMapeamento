@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="{% static 'css/cadPropriedade.css' %}">
     <script src="{% static 'js/botoes.js' %}"></script>
     <script src="{% static 'js/api.js' %}"></script>
+
+
 </head>
 
 <body>
-<br><br><br><br>
 {% if request.user.is_authenticated %}
     <div class="div-propriedade">
         <div class = "col-8 m-auto pt-2 pb-2 text-center">
@@ -39,12 +40,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label placeholder="Selecione uma cultura">Cultura:</label>
+                    <label placeholder="Selecione uma cultura">Culturas:</label>
                         {{ form.Culturas}}
                 </div>
 
                 <div class="form-group">
-                    <label placeholder="Selecione um Proprietário">Proprietário:</label>
+                    <label placeholder="Selecione um proprietário">Proprietário:</label>
                         {{ form.Proprietarios }}
                 </div>
 
@@ -62,6 +63,10 @@
 
                 <div class="form-group mt-4">Tamanho da area:
                     <input class="campo-geral" type="text" placeholder="insira o tamanho da área" name="{{ form.tamanho_area.name }}" value="{{ form.tamanho_area.value|default_if_none:'' }}" required>
+                </div>
+
+                <div class="form-group mt-4">Satélite:
+                    <input class="campo-geral" type="text" placeholder="inserir fonte" name="{{ form.rl.name }}" value="{{ form.rl.value|default_if_none:'' }}" required>
                 </div>
 
                 <div class="form-group mt-4">
