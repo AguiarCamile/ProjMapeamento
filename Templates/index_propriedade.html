@@ -34,6 +34,7 @@
                     <th scope="col">Reserva Legal</th>
                     <th scope="col">Coordenada da Reserva</th>
                     <th scope="col">Tamanho da area</th>
+                    <th scope="col">Satélite</th>
                     <th scope="col">Ações</th>
                   </tr>
             </thead>
@@ -50,10 +51,11 @@
                     <td>{{dbs.rl}}</td>
                     <td>{{dbs.rl_coordenadas}}</td>
                     <td>{{dbs.tamanho_area}}</td>
+                    <td>{{dbs.satelite}}</td>
                     <td>
                        <!--<a href="{% url 'viewdados_propriedade' dbs.id %}" class="btn btn-dark"> Visualizar </a>-->
                        <a href="{% url 'update_propriedade' dbs.id %}" class="btn btn-success"> Editar </a>
-                       <a href="{% url 'delete_propriedade' dbs.id %}" class="btn btn-danger"> Deletar </a>
+                       <a href="{% url 'delete_propriedade' dbs.id %}" class="btn btn-danger" onclick="return confirm('Deseja mesmo apagar este item?')"> Deletar </a>
                     </td>
                   </tr>
                 {%endfor%}

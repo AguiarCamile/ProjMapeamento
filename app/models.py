@@ -24,6 +24,7 @@ class Propriedades(models.Model):
     rl = models.CharField(max_length=50)
     rl_coordenadas = models.CharField(max_length=13)
     tamanho_area = models.CharField(max_length=11)
+    satelite = models.CharField(max_length=11)
 
     def __str__(self):
         return "Propriedade {}".format(self.id)

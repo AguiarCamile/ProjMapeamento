@@ -393,6 +393,10 @@ header h5{
   margin-left: auto;
   margin-right: auto;
 }
+#curiosidade .portfolio-item .img-fluid {
+    max-width: 100%;
+}
+
 
 #curiosidade .portfolio-item .portfolio-caption {
     padding: 1.5rem;
@@ -403,6 +407,8 @@ header h5{
 
 #curiosidade .portfolio-item .portfolio-caption img {
     max-width: 100%;
+    display: flex;
+    align-items: center;
 }
 #curiosidade .portfolio-item .portfolio-hover .portfolio-hover-content {
   font-size: 1.25rem;

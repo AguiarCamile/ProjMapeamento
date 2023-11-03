@@ -43,7 +43,7 @@
                     <td>
                        <!--<a href="{% url 'viewdados_proprietario' dbs.id %}" class="btn btn-dark"> Visualizar </a>-->
                        <a href="{% url 'update_proprietario' dbs.id %}" class="btn btn-success"> Editar </a>
-                       <a href="{% url 'delete_proprietario' dbs.id %}" class="btn btn-danger"> Deletar </a>
+                       <a href="{% url 'delete_proprietario' dbs.id %}" class="btn btn-danger" onclick="return confirm('Deseja mesmo apagar este item?')"> Deletar </a>
                     </td>
                   </tr>
                 {%endfor%}

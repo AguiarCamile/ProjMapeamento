@@ -21,4 +21,4 @@ class PropriedadesForm(ModelForm):
 
     class Meta:
         model = Propriedades
-        fields = ['Estado', 'Microrregiao', 'Cidade',  'Culturas', 'Proprietarios', 'app', 'rl', 'rl_coordenadas', 'tamanho_area']
+        fields = ['Estado', 'Microrregiao', 'Cidade',  'Culturas', 'Proprietarios', 'app', 'rl', 'rl_coordenadas', 'tamanho_area', 'satelite']

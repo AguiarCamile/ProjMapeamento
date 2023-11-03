@@ -18,4 +18,4 @@ class PropriedadesViewSet(viewsets.ModelViewSet):
     model = Propriedades
     serializer_class = PropriedadesSerializer
     queryset = Propriedades.objects.all()
-    filter_fields = ('Estado', 'Microrregiao', 'Cidade',  'Culturas', 'Proprietarios', 'app', 'rl', 'rl_coordenadas', 'tamanho_area')
+    filter_fields = ('Estado', 'Microrregiao', 'Cidade',  'Culturas', 'Proprietarios', 'app', 'rl', 'rl_coordenadas', 'tamanho_area', 'satelite')
